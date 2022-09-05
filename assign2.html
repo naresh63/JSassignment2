@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JS assign 2</h1>
+
+    <script>
+      console.log("assign 2");
+      //. Write a Javascript function to check whether a triangle is equilateral,isosceles or scalene.
+      // equilateral 3 equals, isosceles 2 equals, scalene 3 diff.
+
+      function checkTriangle(angle1, angle2, angle3) {
+        if (angle1 === angle2 && angle2 === angle3) {
+          console.log("triangle is equilateral");
+        } else if (
+          angle1 === angle2 ||
+          angle2 === angle3 ||
+          angle3 === angle1
+        ) {
+          console.log("triangle is isosceles");
+        } else {
+          console.log("triangle is scalene.");
+        }
+      }
+      checkTriangle(90, 90, 90);
+      //2. Write a function using switch case to find the grade of a student based on marks obtained
+      function findGrade(grade) {
+        switch (true) {
+          // If score is 90 or greater
+          case grade >= 90:
+            console.log("S grade");
+            break;
+          // If score is 80 or greater
+          case grade >= 80:
+            console.log("A grade");
+            break;
+          // If score is 70 or greater
+          case grade >= 70:
+            console.log("B grade");
+            break;
+          // If score is 60 or greater
+          case grade >= 60:
+            console.log("C grade");
+            break;
+         // If score is 50 or greater
+          case grade >= 50:
+            console.log("D grade");
+            break;
+         // If score is 40 or greater
+          case grade >= 40:
+            console.log("E grade");
+            break;
+         // If score is 39 or lesser 
+         case grade < 40:
+            console.log("Student has failed");
+            break;   
+
+          // Anything 59 or below is failing
+          default:
+            console.log("Invalid marks");
+        }
+      }
+      findGrade(38);
+      //3. Write a JavaScript program to find the sum of the multiples of 3 and 5  under 1000
+      let sumOfMulti=0;
+      for(let i=1;i<1000;i++){
+        if(i% 3 ===0 && i%5===0){
+           sumOfMulti= sumOfMulti + i;    
+        }
+      }
+      console.log(sumOfMulti);
+      //4.Write a program to find the factorial of all prime numbers between a given range . Range will be passed as 2 values in the function parameters.
+      function findFacto(num1,num2){
+      
+      for(let i=num1;i<num2;i++){
+      // console.log(i)
+       let count=0;
+       for(let j=1;j<=i;j++){
+         if(i%j===0){
+           count++;
+         }
+       }
+       if(count ===2){
+         console.log(i, 'is prime')
+         let factoOfPrime=1;
+         for(let k=1;k<=i;k++){
+           factoOfPrime= factoOfPrime*k;
+         }
+         console.log(`facto. of ${i} is ${factoOfPrime}`)
+       }
+      }
+    }
+    findFacto(1,100);
+      
+    </script>
+  </body>
+</html>
